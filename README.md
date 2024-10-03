@@ -1,4 +1,4 @@
-# Zen42 — A somewhat sane keymap for the Corne-ish Zen V2
+# Zen42 — A somewhat sane keymap
 
 ![Corne-ish Zen Logo](img/Zen_R3_sticker.png)
 
