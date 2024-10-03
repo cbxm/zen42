@@ -1,45 +1,107 @@
-# Corne-ish Zen V2 Custom Configuration
+# Zen42 — A somewhat sane keymap for the Corne-ish Zen V2
 
 ![Corne-ish Zen Logo](img/Zen_R3_sticker.png)
 
-**NOTE: This code is currently merged into ZMK Main.**
+This repository contains my personal keymap configuration for the Corne-ish Zen V2 low profile wireless mechanical keyboard. It's based on the official configuration but customized to suit my specific needs and preferences.
 
-This repo is the official configuration of the Corne-ish Zen V2 low profile wireless mechanical keyboard. Use it to develop your own keymap and easily build your own ZMK firmware to run on your Corne-ish Zen. These steps will get you using your keymap on your keyboard in the fastest time possible. It uses the GitHub Actions feature to build your firmware online, rather than setting up a complex tool chain on your local computer.
+## Keymap Overview
 
-If you are looking to dig deeper into ZMK and develop new functionality, it is recommended to follow the steps of installing ZMK as found on the official ZMK documentation site (linked below).
+The keymap is designed with multiple layers to provide easy access to a wide range of functions while maintaining a compact 42-key layout. Here's a brief overview of the layers:
 
-V2 PCBs were only used in the 3rd GB round (R3). To confirm which version you need, remove the bottom from the keyboard and look beside the Corne-ish Zen logo for a version number. Group Buy rounds 1 and 2 have V1 PCBs and R3 has V2 PCBs. (Also V2 PCBs have white power switches... V1 PCBs have black ones.)
+1. **Base Layer**: Standard QWERTY layout with some modifications for improved ergonomics and efficiency.
+2. **F-Numbers Layer**: Function keys and numpad layout.
+3. **Symbols Layer**: Easy access to symbols and special characters.
+4. **Navigation Layer**: Arrow keys, page navigation, and media controls.
+5. **Board Layer**: Bluetooth controls and additional function keys.
+
+### Key Features
+
+- **Consistent Modifiers**: All modifier keys (Shift, Ctrl, Alt, GUI) are accessible from every layer, ensuring consistent keyboard behavior across layers.
+- **Custom Modifiers**: The base layer includes custom modifiers like `mt RALT DELETE` for the top-right key, combining Alt and Delete functions.
+- **Layer Switching**: Utilizes the `lt` (layer-tap) function for easy layer switching, e.g., `lt 3 SPACE` for accessing the navigation layer.
+- **Bluetooth Functionality**: The board layer includes Bluetooth clear, previous, and next functions for easy device switching.
+- **Conditional Layers**: Implements a conditional layer that activates the board layer when both layer 2 and 1 are active.
+
+## Keymap Details
+
+### Base Layer
+
+```txt
+|  TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I   |  O  |  P  | ALT/DEL |
+| BKSP  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K   |  L  |  ;  |    '    |
+| SHIFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,   |  .  |  /  |  SHIFT  |
+                   | GUI | ENTER | CTRL/ESC | ALT/ENTER | SPACE/NAV | MENU/FN |
+```
+
+The base layer is designed for efficient typing with easy access to common modifiers and layer switches.
+
+### Function and Numpad Layer
+
+```txt
+| trans | F10 | F7 | F8 | F9 |     |   |   +   |   7   |   8   |   9   |   *   | trans |
+| trans | F11 | F4 | F5 | F6 |     |   |   -   |   4   |   5   |   6   |   /   |   =   |
+| trans | F12 | F1 | F2 | F3 |     |   |   0   |   1   |   2   |   3   |   ,   | trans |
+                    |    |    |    |   | trans | trans |       |
+```
+
+This layer provides access to function keys and a numpad layout for quick number entry.
+
+### Symbols Layer
+
+```txt
+| trans |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |    \   |
+| trans |  `  |  {  |  [  |  (  |  =  |   |  -  |     |     |     |  "  |        |
+| trans |  ~  |  }  |  ]  |  )  |  +  |   |  _  |     |     |     |     | trans  |
+                    |     |     |     |   |     |     |     |
+```
+
+The symbols layer provides easy access to commonly used symbols and brackets.
+
+### Navigation Layer
+
+```txt
+| trans |     |     |     |     |      |   |       |       |       |       | trans | trans |
+| trans |     |     |     |     | PgUp |   | Left  | Down  |  Up   | Right | Mute  |       |
+| trans |     |     | Home| End | PgDn |   | Play  | Prev  | Next  | Vol-  | Vol+  | trans |
+                    |     |     |      |   | trans | trans |       |
+```
+
+This layer focuses on navigation and media controls for improved workflow.
+
+### Board Layer
+
+```txt
+|      |     |     | BT_CLR | BT_PRV | BT_NXT |   |     |     |     |     |     |      |
+|      |     |     |        |        |        |   |     |     |     |     |     |      |
+|      |     |     |        |        |        |   |     |     |     |     |     |      |
+                    |        |        |        |   |     |     |     |
+```
+
+The board layer provides Bluetooth controls for easy device management.
+
+## Customization
+
+Feel free to fork this repository and customize the keymap to suit your needs. The main keymap file is located at `config/corneish_zen.keymap`. You can modify the layers, key bindings, and behaviors to create your perfect layout.
+
+## Flashing Instructions
+
+To flash this firmware to your Corne-ish Zen V2 keyboard:
+
+1. Fork this repository to your GitHub account.
+2. Make any desired changes to the keymap file (`config/corneish_zen.keymap`).
+3. Commit and push your changes to your forked repository.
+4. GitHub Actions will automatically build the firmware for you.
+5. Download the firmware zip file from the Actions tab in your GitHub repository.
+6. Extract the `.uf2` files and flash them to your keyboard using the standard flashing procedure.
+
+For detailed flashing instructions, please refer to the official Corne-ish Zen documentation.
 
 ## Resources
 
-- The [official ZMK Firmware GitHub](https://github.com/zmkfirmware/zmk) repository. View the keymaps for other boards and shields as a starting point for your keymap.
-- The [official ZMK Documentation](https://zmk.dev/docs) web site. Find the answers to many of your questions about ZMK Firmware.
-- The [official ZMK Discord Server](https://zmk.dev/community/discord/invite). Instant conversations with other ZMK developers and users. Great technical resource!
+- [Official ZMK Firmware GitHub](https://github.com/zmkfirmware/zmk)
+- [ZMK Documentation](https://zmk.dev/docs)
+- [ZMK Discord Server](https://zmk.dev/community/discord/invite)
 
-## Instructions
+## License
 
-1. Log into, or sign up for, your personal GitHub account.
-2. Fork this repository to your local computer, and then push it to your GitHub personal account. ([instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo))
-3. Edit the keymap file(s) to suit your needs:
-    - Change [the keymap file](/config/corneish_zen.keymap) to edit keycodes, add new layers etc.
-    - Change [the conf file](/config/corneish_zen.conf) to edit configuration settings like changing the deep sleep timeout
-4. Commit and push your changes to your personal repo. Upon pushing it, GitHub Actions will start building a new version of your firmware with the updated keymap.
-
-> **Note**
-> 
-> After forking the repo to your own account, you can also edit the files directly using the GitHub web interface via the edit button on the top right (keyboard shortcut `e`) or via the [GitHub Dev](https://github.com/github/dev) interface (keyboard shortcut `.`) and commit your changes.
-
-## Firmware Files
-
-To locate your firmware files...
-
-1. Log into GitHub and navigate to your personal config repository you just uploaded your keymap changes to.
-2. Click "Actions" in the main navigation, and in the left navigation click the "Build" link.
-3. Select the desired workflow run in the centre area of the page (based on date and time of the build you wish to use). You can also start a new build from this page by clicking the "Run workflow" button.
-4. After clicking the desired workflow run, you should be presented with a section at the bottom of the page called "Artifacts". This section contains the results of your build, in a file called "firmware.zip"
-5. Download the firmware zip archive and extract the two `.uf2` files. They are named according to which side they need to be flashed to.
-6. Flash the firmware to your keyboard by double-clicking the reset button to put the it in bootloader mode. A window should pop up showing the contents of the storage on the keyboard. Drag and drop the correct `.uf2` file into the window. When the upload is complete the window will close and the keyboard will exit bootloader mode.
-    - If you only changed [the keymap file](/config/corneish_zen.keymap) you only need to flash the left side firmware to the left side.
-    - If you changed [the conf file](/config/corneish_zen.conf) you should flash both sides their respective files.
-
-Your keyboard is now ready to use.
+This configuration is released under the MIT License. Feel free to use, modify, and distribute it as you see fit.
