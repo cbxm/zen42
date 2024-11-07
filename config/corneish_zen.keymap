@@ -49,10 +49,10 @@
             //                    | LWR | BACK| CTRL|   | ENT | SPC  | RSE  |
 
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E      &kp R      &kp T        &kp Y        &kp U             &kp I       &kp O    &kp P     &mt RALT DELETE
-&kp BACKSPACE   &kp A  &kp S  &kp D      &kp F      &kp G        &kp H        &kp J             &kp K       &kp L    &kp SEMI  &kp SQT
-&WinShiftDance  &kp Z  &kp X  &kp C      &kp V      &kp B        &kp N        &kp M             &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
-                              &lt 2 ESC  &kp ENTER  &kp LCTRL    &lt 3 SPACE  &LayerModTap 1 1  &kp ESCAPE
+&kp TAB         &kp Q  &kp W  &kp E       &kp R        &kp T        &kp Y        &kp U             &kp I       &kp O    &kp P     &mt RALT DELETE
+&kp BACKSPACE   &kp A  &kp S  &kp D       &kp F        &kp G        &kp H        &kp J             &kp K       &kp L    &kp SEMI  &kp SQT
+&WinShiftDance  &kp Z  &kp X  &kp C       &kp V        &kp B        &kp N        &kp M             &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
+                              &kp ESCAPE  &lt 2 ENTER  &kp LCTRL    &lt 3 SPACE  &LayerModTap 1 1  &kp ESCAPE
             >;
         };
 
