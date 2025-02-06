@@ -10,9 +10,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    chosen {
-        zmk,matrix_transform = &default_transform;
-    };
+    chosen { zmk,matrix_transform = &default_transform; };
 };
 
 / {
@@ -49,13 +47,20 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <40>;
-            bindings = 
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp KP_N0>,
-                <&macro_tap &kp KP_N1>,
-                <&macro_tap &kp KP_N5>,
-                <&macro_tap &kp KP_N1>,
-                <&macro_release &kp LALT>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0>,
+                <&macro_tap>,
+                <&kp KP_N1>,
+                <&macro_tap>,
+                <&kp KP_N5>,
+                <&macro_tap>,
+                <&kp KP_N1>,
+                <&macro_release>,
+                <&kp LALT>;
+
             label = "EM_DASH";
         };
     };
@@ -76,40 +81,40 @@
         f-numbers {
             label = "f-num";
             bindings = <
-&trans  &kp F10  &kp F7  &kp F8  &kp F9  &none     &kp KP_PLUS      &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MULTIPLY   &trans
-&trans  &kp F11  &kp F4  &kp F5  &kp F6  &none     &kp KP_MINUS     &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DIVIDE     &kp KP_EQUAL
-&trans  &kp F12  &kp F1  &kp F2  &kp F3  &none     &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &mt COMMA PERIOD  &trans
-                         &trans  &trans  &trans    &trans           &trans           &mo 1
+&trans  &kp F10  &kp F7  &kp F8  &kp F9  &none     &kp KP_PLUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MULTIPLY   &trans
+&trans  &kp F11  &kp F4  &kp F5  &kp F6  &none     &kp KP_MINUS  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DIVIDE     &kp KP_EQUAL
+&trans  &kp F12  &kp F1  &kp F2  &kp F3  &none     &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &mt COMMA PERIOD  &trans
+                         &trans  &trans  &trans    &trans        &trans     &mo 1
             >;
         };
 
         symbols {
             label = "sym";
             bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH     &kp DLLR      &kp PRCNT     &kp CARET     &kp AMPS   &kp STAR        &kp LPAR   &kp RPAR      &kp BSLH
-&trans  &kp GRAVE     &kp LBRC      &kp LBKT     &kp LPAR      &kp EQUAL     &dash_dance 0 MINUS  &none     &none          &none      &kp DQT       &trans
-&trans  &kp TILDE     &kp RBRC      &kp RBKT     &kp RPAR      &kp PLUS      &kp UNDER     &none     &none          &none      &none         &trans
-                                    &trans       &trans        &trans        &trans        &trans    &trans
+&trans  &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET            &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp BSLH
+&trans  &kp GRAVE  &kp LBRC  &kp LBKT  &kp LPAR  &kp EQUAL    &dash_dance 0 MINUS  &none     &none     &none     &trans    &trans
+&trans  &kp TILDE  &kp RBRC  &kp RBKT  &kp RPAR  &kp PLUS     &kp UNDER            &none     &none     &none     &none     &trans
+                             &trans    &trans    &trans       &trans               &trans    &trans
             >;
         };
 
         navigation {
             label = "nav";
             bindings = <
-&trans  &none  &none     &none             &none              &none      &kp PRINTSCREEN  &none          &none     &none      &trans  &trans
-&trans  &none  &kp HOME  &kp PG_UP         &kp PG_DN          &kp END    &kp LEFT         &kp DOWN       &kp UP    &kp RIGHT  &none   &none
-&trans  &none  &none     &kp LG(LC(LEFT))  &kp LC(LG(RIGHT))  &none      &none            &none          &none     &none      &none   &trans
-                         &trans            &trans             &trans     &trans           &trans         &none
+&trans  &none  &none     &none             &none              &none      &kp PRINTSCREEN  &none     &none   &none      &trans  &trans
+&trans  &none  &kp HOME  &kp PG_UP         &kp PG_DN          &kp END    &kp LEFT         &kp DOWN  &kp UP  &kp RIGHT  &none   &none
+&trans  &none  &none     &kp LG(LC(LEFT))  &kp LC(LG(RIGHT))  &none      &none            &none     &none   &none      &none   &trans
+                         &trans            &trans             &trans     &trans           &trans    &none
             >;
         };
 
         board {
             label = "keeb";
             bindings = <
-&kp CAPS  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &kp KP_NLCK  &none         &none       &none        &none     &bt BT_CLR
-&none     &none          &none          &none          &none          &none            &none         &kp C_PREV    &kp C_PP    &kp C_NEXT   &none     &bt BT_PRV
-&none     &none          &none          &none          &none          &none            &none         &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP &none     &bt BT_NXT
-                                       &none          &none          &none            &none         &none         &mo 1
+&kp CAPS  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &kp KP_NLCK  &none         &none       &none         &none  &bt BT_CLR
+&none     &none          &none          &none          &none          &none            &none        &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &bt BT_PRV
+&none     &none          &none          &none          &none          &none            &none        &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &bt BT_NXT
+                                        &none          &none          &none            &none        &none         &mo 1
             >;
         };
     };
