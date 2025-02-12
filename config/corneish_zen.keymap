@@ -112,9 +112,9 @@
         symbols {
             label = "sym";
             bindings = <
-&trans  &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET            &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp BSLH
-&trans  &kp GRAVE  &kp LBRC  &kp LBKT  &kp LPAR  &kp EQUAL    &dash_dance 0 MINUS  &none     &none     &none     &trans    &trans
-&trans  &kp TILDE  &kp RBRC  &kp RBKT  &kp RPAR  &kp PLUS     &kp UNDER            &none     &none     &none     &none     &trans
+&trans  &kp CARET               &kp AMPERSAND                  &kp ASTERISK                       &kp PERCENT                                &kp EQUAL                                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &hm LSHIFT EXCLAMATION  &hm LWIN AT_SIGN               &hm LALT HASH                      &hm LCTRL DOLLAR                           &dash_dance 0 MINUS                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE               &dance RIGHT_BRACE LEFT_BRACE  &dance RIGHT_BRACKET LEFT_BRACKET  &dance RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp SQT               &trans  &trans  &trans  &trans  &trans  &trans
                              &trans    &trans    &trans       &trans               &trans    &trans
             >;
         };
@@ -122,10 +122,10 @@
         navigation {
             label = "nav";
             bindings = <
-&trans  &none  &none     &none             &none              &none      &kp PRINTSCREEN  &none     &none   &none      &trans  &trans
-&trans  &none  &kp HOME  &kp PG_UP         &kp PG_DN          &kp END    &kp LEFT         &kp DOWN  &kp UP  &kp RIGHT  &none   &none
-&trans  &none  &none     &kp LG(LC(LEFT))  &kp LC(LG(RIGHT))  &none      &none            &none     &none   &none      &none   &trans
-                         &trans            &trans             &trans     &trans           &trans    &none
+&trans  &trans  &trans     &trans             &trans              &trans      &kp LG(LC(LEFT))  &trans     &trans     &kp LG(LC(RIGHT))  &trans  &trans
+&trans  &trans  &trans  &trans         &trans          &trans    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &trans
+&trans  &trans  &trans     &trans  &trans  &trans      &kp HOME          &kp PG_DN  &kp PG_UP  &kp END            &trans  &trans
+                         &trans            &trans             &trans     &trans           &trans    &trans
             >;
         };
 
