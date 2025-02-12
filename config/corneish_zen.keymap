@@ -51,16 +51,16 @@
         };
     };
 
-        dance: dance {
-            compatible = "zmk,behavior-hold-tap";
-            label = "DANCE";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            bindings = <&kp>, <&kp>;
+    dance: dance {
+        compatible = "zmk,behavior-hold-tap";
+        label = "DANCE";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <0>;
+        bindings = <&kp>, <&kp>;
 
-            flavor = "balanced";
-        };
+        flavor = "balanced";
+    };
 
     macros {
         em_dash: em_dash {
@@ -92,10 +92,10 @@
         base {
             label = "base";
             bindings = <
-&none  &kp Q         &kp W          &kp E           &kp R           &kp T                   &kp Y           &kp U           &kp I       &kp O       &kp P            &none
-&none  &hm LSHIFT A  &hm LGUI S     &hm LALT D      &hm LCTRL F     &kp G                   &kp H           &hm RCTRL J     &hm RALT K  &hm RGUI L  &hm RSHIFT SEMI  &gresc
-&none  &kp Z         &kp X          &kp C           &kp V           &kp B                   &kp N           &kp M           &kp COMMA   &kp DOT     &kp FSLH         &none
-                                    &lt 1 TAB       &lt 2 ENTER     &mt LCTRL BACKSPACE     &lt 4 SPACE     &lt 1 TAB       &lt 2 DEL
+&none  &kp Q         &kp W       &kp E       &kp R        &kp T                  &kp Y        &kp U        &kp I       &kp O       &kp P            &none
+&none  &hm LSHIFT A  &hm LGUI S  &hm LALT D  &hm LCTRL F  &kp G                  &kp H        &hm RCTRL J  &hm RALT K  &hm RGUI L  &hm RSHIFT SEMI  &kp APOSTROPHE
+&none  &kp Z         &kp X       &kp C       &kp V        &kp B                  &kp N        &kp M        &kp COMMA   &kp DOT     &kp FSLH         &none
+                                 &lt 1 TAB   &lt 2 ENTER  &mt LCTRL BACKSPACE    &lt 6 SPACE  &lt 1 TAB    &lt 2 DEL
             >;
         };
 
@@ -109,32 +109,52 @@
             >;
         };
 
-        symbols {
-            label = "sym";
+        symbolsLeft {
+            label = "symL";
             bindings = <
-&trans  &kp CARET               &kp AMPERSAND                  &kp ASTERISK                       &kp PERCENT                                &kp EQUAL                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &hm LSHIFT EXCLAMATION  &hm LWIN AT_SIGN               &hm LALT HASH                      &hm LCTRL DOLLAR                           &dash_dance 0 MINUS                           &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp GRAVE               &dance RIGHT_BRACE LEFT_BRACE  &dance RIGHT_BRACKET LEFT_BRACKET  &dance RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp SQT               &trans  &trans  &trans  &trans  &trans  &trans
-                             &trans    &trans    &trans       &trans               &trans    &trans
+&trans  &kp CARET               &kp AMPERSAND                  &kp ASTERISK                       &kp PERCENT                                &kp EQUAL              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &hm LSHIFT EXCLAMATION  &hm LWIN AT_SIGN               &hm LALT HASH                      &hm LCTRL DOLLAR                           &dash_dance 0 MINUS    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE               &dance RIGHT_BRACE LEFT_BRACE  &dance RIGHT_BRACKET LEFT_BRACKET  &dance RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp SQT                &trans  &trans  &trans  &trans  &trans  &trans
+                                                               &trans                             &trans                                     &trans                 &trans  &trans  &trans
             >;
         };
 
-        navigation {
+        NavLeft {
+            label = "navL";
+            bindings = <
+&trans  &trans  &kp LG(LC(LEFT))  &trans     &trans     &kp LG(LC(RIGHT))    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp HOME          &kp PG_DN  &kp PG_UP  &kp END              &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans     &trans     &trans               &trans  &trans  &trans
+            >;
+        };
+
+        NavRight {
             label = "nav";
             bindings = <
-&trans  &trans  &trans     &trans             &trans              &trans      &kp LG(LC(LEFT))  &trans     &trans     &kp LG(LC(RIGHT))  &trans  &trans
-&trans  &trans  &trans  &trans         &trans          &trans    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &trans
-&trans  &trans  &trans     &trans  &trans  &trans      &kp HOME          &kp PG_DN  &kp PG_UP  &kp END            &trans  &trans
-                         &trans            &trans             &trans     &trans           &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LG(LC(LEFT))  &trans     &trans     &kp LG(LC(RIGHT))  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME          &kp PG_DN  &kp PG_UP  &kp END            &trans  &trans
+                        &trans  &trans  &trans    &trans            &trans     &trans
             >;
         };
 
-        board {
-            label = "keeb";
+        boardLeft {
+            label = "keebL";
             bindings = <
 &kp CAPS  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &kp KP_NLCK  &none         &none       &none         &none  &bt BT_CLR
-&none     &none          &none          &none          &none          &none            &none        &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &bt BT_PRV
-&none     &none          &none          &none          &none          &none            &none        &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &bt BT_NXT
+&none     &none          &none          &none          &none          &none            &none        &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &bt BT_PRV
+&none     &none          &none          &none          &none          &none            &none        &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &bt BT_NXT
+                                        &none          &none          &none            &none        &none         &mo 1
+            >;
+        };
+
+        BoardRight {
+            label = "keebR";
+            bindings = <
+&kp CAPS  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &kp KP_NLCK  &none         &none       &none         &none  &bt BT_CLR
+&none     &none          &none          &none          &none          &none            &none        &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &bt BT_PRV
+&none     &none          &none          &none          &none          &none            &none        &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &bt BT_NXT
                                         &none          &none          &none            &none        &none         &mo 1
             >;
         };
@@ -145,7 +165,7 @@
 
         keeb {
             if-layers = <2 1>;
-            then-layer = <4>;
+            then-layer = <6>;
         };
     };
 };
