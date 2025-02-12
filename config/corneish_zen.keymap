@@ -163,7 +163,7 @@
             label = "navL";
             bindings = <
 &trans  &trans  &kp LG(LC(LEFT))  &trans        &trans          &kp LG(LC(RIGHT))    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LEFT          &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT            &trans  &trans  &trans  &trans  &trans  &trans
+&mo 9   &trans  &kp LEFT          &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp HOME          &kp PG_UP     &kp PG_DN       &kp END              &trans  &trans  &trans  &trans  &trans  &trans
                                   &trans        &trans          &trans               &trans  &trans  &trans
             >;
@@ -173,7 +173,7 @@
             label = "nav";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LG(LC(LEFT))  &trans     &trans     &kp LG(LC(RIGHT))  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &mo 10
 &trans  &trans  &trans  &trans  &trans  &trans    &kp HOME          &kp PG_DN  &kp PG_UP  &kp END            &trans  &trans
                         &trans  &trans  &trans    &trans            &trans     &trans
             >;
