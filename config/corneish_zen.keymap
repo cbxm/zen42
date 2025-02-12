@@ -92,20 +92,50 @@
         base {
             label = "base";
             bindings = <
-&none  &kp Q         &kp W       &kp E       &kp R        &kp T              &kp Y        &kp U        &kp I       &kp O       &kp P            &none
-&none  &hm LSHIFT A  &hm LGUI S  &hm LALT D  &hm LCTRL F  &kp G              &kp H        &hm RCTRL J  &hm RALT K  &hm RGUI L  &hm RSHIFT SEMI  &kp APOSTROPHE
-&none  &kp Z         &kp X       &kp C       &kp V        &kp B              &kp N        &kp M        &kp COMMA   &kp DOT     &kp FSLH         &none
-                                 &lt 1 TAB   &lt 2 ENTER  &lt 3 BACKSPACE    &lt 4 SPACE  &lt 1 TAB    &lt 2 DEL
+&kp ESC  &kp Q         &kp W       &kp E       &kp R        &kp T              &kp Y        &kp U        &kp I       &kp O       &kp P            &none
+&none    &hm LSHIFT A  &hm LGUI S  &hm LALT D  &hm LCTRL F  &kp G              &kp H        &hm RCTRL J  &hm RALT K  &hm RGUI L  &hm RSHIFT SEMI  &kp APOSTROPHE
+&none    &kp Z         &kp X       &kp C       &kp V        &kp B              &kp N        &kp M        &kp COMMA   &kp DOT     &kp FSLH         &none
+                                   &lt 1 TAB   &lt 5 ENTER  &lt 7 BACKSPACE    &lt 8 SPACE  &lt 2 TAB    &lt 6 DEL
             >;
         };
 
-        f-numbers {
-            label = "f-num";
+        NumLeft {
+            label = "numL";
             bindings = <
-&trans  &kp F10  &kp F7  &kp F8  &kp F9  &none     &kp KP_PLUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MULTIPLY   &trans
-&trans  &kp F11  &kp F4  &kp F5  &kp F6  &none     &kp KP_MINUS  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DIVIDE     &kp KP_EQUAL
-&trans  &kp F12  &kp F1  &kp F2  &kp F3  &none     &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &mt COMMA PERIOD  &trans
-                         &trans  &trans  &trans    &trans        &trans     &trans
+&trans  &trans     &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&mo 3   &trans     &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                              &trans     &trans     &trans    &trans  &trans  &trans
+            >;
+        };
+
+        NumRight {
+            label = "numR";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans        &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp KP_MINUS  &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans  &mo 4
+&trans  &trans  &trans  &trans  &trans  &trans    &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans  &trans
+                        &trans  &trans  &trans    &trans        &trans     &trans
+            >;
+        };
+
+        FkeysLeft {
+            label = "fkeysL";
+            bindings = <
+&trans  &kp F10  &kp F7  &kp F8  &kp F9  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F12  &kp F1  &kp F2  &kp F3  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                         &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        FkeysRight {
+            label = "fkeysR";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -116,6 +146,16 @@
 &trans  &hm LSHIFT EXCLAMATION  &hm LWIN AT_SIGN               &hm LALT HASH                      &hm LCTRL DOLLAR                           &dash_dance 0 MINUS    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp GRAVE               &dance RIGHT_BRACE LEFT_BRACE  &dance RIGHT_BRACKET LEFT_BRACKET  &dance RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp SQT                &trans  &trans  &trans  &trans  &trans  &trans
                                                                &trans                             &trans                                     &trans                 &trans  &trans  &trans
+            >;
+        };
+
+        symbolsRight {
+            label = "symR";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &kp EQUAL            &kp PERCENT                                &kp ASTERISK                       &kp AMPERSAND                  &kp CARET               &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &dash_dance 0 MINUS  &hm RCTRL DOLLAR                           &hm RALT HASH                      &hm RWIN AT_SIGN               &hm RSHIFT EXCLAMATION  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp SQT              &dance LEFT_PARENTHESIS RIGHT_PARENTHESIS  &dance LEFT_BRACKET RIGHT_BRACKET  &dance LEFT_BRACE RIGHT_BRACE  &kp GRAVE               &trans
+                        &trans  &trans  &trans    &trans               &trans                                     &trans
             >;
         };
 
@@ -158,14 +198,24 @@
                                         &trans         &trans         &trans           &trans       &trans        &trans
             >;
         };
+
+        f-numbers {
+            label = "f-num";
+            bindings = <
+&trans  &kp F10  &kp F7  &kp F8  &kp F9  &trans    &kp KP_PLUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MULTIPLY  &trans
+&trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans    &kp KP_MINUS  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DIVIDE    &kp KP_EQUAL
+&trans  &kp F12  &kp F1  &kp F2  &kp F3  &trans    &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans           &trans
+                         &trans  &trans  &trans    &trans        &trans     &trans
+            >;
+        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         keeb {
-            if-layers = <2 1>;
-            then-layer = <6>;
+            if-layers = <5 2>;
+            then-layer = <9>;
         };
     };
 };
