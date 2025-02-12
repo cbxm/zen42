@@ -144,7 +144,7 @@
             bindings = <
 &trans  &kp CARET               &kp AMPERSAND                  &kp ASTERISK                       &kp PERCENT                                &kp EQUAL              &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &hm LSHIFT EXCLAMATION  &hm LWIN AT_SIGN               &hm LALT HASH                      &hm LCTRL DOLLAR                           &dash_dance 0 MINUS    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp GRAVE               &dance RIGHT_BRACE LEFT_BRACE  &dance RIGHT_BRACKET LEFT_BRACKET  &dance RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp SQT                &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE               &dance RIGHT_BRACE LEFT_BRACE  &dance RIGHT_BRACKET LEFT_BRACKET  &dance RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp BACKSLASH          &trans  &trans  &trans  &trans  &trans  &trans
                                                                &trans                             &trans                                     &trans                 &trans  &trans  &trans
             >;
         };
@@ -154,7 +154,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp EQUAL            &kp PERCENT                                &kp ASTERISK                       &kp AMPERSAND                  &kp CARET               &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &dash_dance 0 MINUS  &hm RCTRL DOLLAR                           &hm RALT HASH                      &hm RWIN AT_SIGN               &hm RSHIFT EXCLAMATION  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp SQT              &dance LEFT_PARENTHESIS RIGHT_PARENTHESIS  &dance LEFT_BRACKET RIGHT_BRACKET  &dance LEFT_BRACE RIGHT_BRACE  &kp GRAVE               &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSLASH        &dance LEFT_PARENTHESIS RIGHT_PARENTHESIS  &dance LEFT_BRACKET RIGHT_BRACKET  &dance LEFT_BRACE RIGHT_BRACE  &kp GRAVE               &trans
                         &trans  &trans  &trans    &trans               &trans                                     &trans
             >;
         };
