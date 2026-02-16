@@ -1,6 +1,38 @@
+# ZMK build artifacts
 build/
+*.uf2
+*.bin
+
+# West workspace dependencies
 zmk/
 zephyr/
 modules/
 tools/
 .west/
+
+# Worktrees
+.worktrees/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System
+.DS_Store
+Thumbs.db
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+
+# Python
+__pycache__/
+*.pyc
+
+# Temp
+*.tmp
+*.log
+*.bak
