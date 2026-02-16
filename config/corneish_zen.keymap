@@ -19,7 +19,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -49,17 +49,17 @@
             quick-tap-ms = <0>;
             bindings = <&em_dash>, <&kp>;
         };
-    };
 
-    dance: dance {
-        compatible = "zmk,behavior-hold-tap";
-        label = "DANCE";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <0>;
-        bindings = <&kp>, <&kp>;
+        dance: dance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&kp>;
 
-        flavor = "balanced";
+            flavor = "balanced";
+        };
     };
 
     macros {
@@ -86,6 +86,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        L_mo_keeb {
+            bindings = <&mo 9>;
+            key-positions = <38 12>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -93,7 +102,7 @@
             label = "base";
             bindings = <
 &kp ESC  &kp Q         &kp W       &kp E       &kp R        &kp T              &kp Y        &kp U        &kp I       &kp O       &kp P            &none
-&none    &hm LSHIFT A  &hm LGUI S  &hm LALT D  &hm LCTRL F  &kp G              &kp H        &hm RCTRL J  &hm RALT K  &hm RGUI L  &hm RSHIFT SEMI  &kp APOSTROPHE
+&none    &hm LSHIFT A  &hm LGUI S  &hm LALT D  &hm LCTRL F  &kp G              &kp H        &hm LCTRL J  &hm LALT K  &hm RGUI L  &hm RSHIFT SEMI  &kp APOSTROPHE
 &none    &kp Z         &kp X       &kp C       &kp V        &kp B              &kp N        &kp M        &kp COMMA   &kp DOT     &kp FSLH         &none
                                    &lt 1 TAB   &lt 5 ENTER  &lt 7 BACKSPACE    &lt 8 SPACE  &lt 2 TAB    &lt 6 DEL
             >;
@@ -153,7 +162,7 @@
             label = "symR";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp EQUAL            &kp PERCENT                                &kp ASTERISK                       &kp AMPERSAND                  &kp CARET               &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &dash_dance 0 MINUS  &hm RCTRL DOLLAR                           &hm RALT HASH                      &hm RWIN AT_SIGN               &hm RSHIFT EXCLAMATION  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &dash_dance 0 MINUS  &hm LCTRL DOLLAR                           &hm LALT HASH                      &hm RWIN AT_SIGN               &hm RSHIFT EXCLAMATION  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSLASH        &dance LEFT_PARENTHESIS RIGHT_PARENTHESIS  &dance LEFT_BRACKET RIGHT_BRACKET  &dance LEFT_BRACE RIGHT_BRACE  &kp GRAVE               &trans
                         &trans  &trans  &trans    &trans               &trans                                     &trans
             >;
@@ -170,7 +179,7 @@
         };
 
         NavRight {
-            label = "nav";
+            label = "navR";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LG(LC(LEFT))  &trans     &trans     &kp LG(LC(RIGHT))  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &mo 10
@@ -182,20 +191,20 @@
         boardLeft {
             label = "keebL";
             bindings = <
-&kp CAPS  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &kp KP_NLCK  &none         &none       &none         &none  &bt BT_CLR
-&none     &none          &none          &none          &none          &none            &none        &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &bt BT_PRV
-&none     &none          &none          &none          &none          &none            &none        &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &bt BT_NXT
-                                        &none          &none          &none            &none        &trans        &trans
+&kp CAPS  &none  &bt BT_PRV    &bt BT_CLR  &bt BT_NXT    &none    &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &kp KP_NLCK
+&none     &none  &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none    &none          &none          &none          &none          &none          &none
+&none     &none  &kp C_PREV    &kp C_PP    &kp C_NEXT    &none    &none          &none          &none          &none          &none          &none
+                               &none       &none         &none    &none          &none          &trans
             >;
         };
 
-        BoardRight {
+        boardRight {
             label = "keebR";
             bindings = <
-&kp CAPS  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &kp KP_NLCK  &none         &none       &none         &none  &bt BT_CLR
-&none     &none          &none          &none          &none          &none            &none        &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &bt BT_PRV
-&none     &none          &none          &none          &none          &none            &none        &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &bt BT_NXT
-                                        &trans         &trans         &trans           &trans       &trans        &trans
+&kp CAPS  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &none  &bt BT_PRV    &bt BT_CLR  &bt BT_NXT    &none  &kp KP_NLCK
+&none     &none          &none          &none          &none          &none            &none  &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &none
+&none     &none          &none          &none          &none          &none            &none  &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &none
+                                        &none          &none          &none            &none  &none         &trans
             >;
         };
 
